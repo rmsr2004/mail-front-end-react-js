@@ -31,7 +31,11 @@ export const logout = async (token) => {
         }
     });
 
-    return await response.json();
+    const data = await response.json();
+
+    console.log(`[LOGOUT] data: ${JSON.stringify(data)}`);
+
+    return data;
 }
 
 export const register = async (name, email, password) => {
@@ -43,9 +47,13 @@ export const register = async (name, email, password) => {
         body: JSON.stringify({ name, email, password })
     });
 
-    if(!response.ok){
+    const data = await response.json();
+
+    console.log(`[REGISTER] data: ${JSON.stringify(data)}`);
+
+    if(data.status != '200'){
         throw new Error('Invalid credentials');
     }
-    
-    return await response.json();
+
+    return data;
 }
