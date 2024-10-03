@@ -19,15 +19,16 @@ export const login = async (email, password) => {
     }
 
     localStorage.setItem('token', data.results);
+    console.log(`[LOGIN] token: ${localStorage.getItem('token')}`);
     return data;
 }   
 
-export const logout = async (token) => {
+export const logout = async () => {
     const response = await fetch(`${API_URL}/logout`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
     });
 
@@ -35,6 +36,7 @@ export const logout = async (token) => {
 
     console.log(`[LOGOUT] data: ${JSON.stringify(data)}`);
 
+    localStorage.removeItem('token');
     return data;
 }
 

@@ -1,0 +1,53 @@
+.inbox-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(41, 202, 255);
+}
+
+.emails-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    padding: 20px;
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.email-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.email-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.email-subject {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+.email-sender {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
